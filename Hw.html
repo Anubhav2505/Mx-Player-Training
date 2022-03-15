@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Page Title</title>
+    <script>
+        //Task 1 pattern
+        document.write("Task1 - Printing a Pattern")
+        document.write("<br>")
+        document.write("<br>")
+        document.write("<br>")
+
+        for(var i=1;i<=4;i++){
+            
+            for(var j=i;j<=4;j++){
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+        for(var i=2;i<=4;i++){
+            
+            for(var j=1;j<=i;j++){
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+        document.write("<br>")
+        document.write("<br>")
+        document.write("<br>")
+         
+        //Task 2 adding the odd elements upto 20 in a array and print it
+
+        document.write("Task2 - Adding the odd elements upto 20 in a array")
+        document.write("<br>")
+        document.write("<br>")
+        document.write("<br>")
+        
+        var oddarray =[];
+        for(i=1;i<=20;i++){
+            if(i%2!=0)
+            oddarray.push(i);
+        }
+        document.write(oddarray);
+        document.write("<br>")
+        document.write("<br>")
+        document.write("<br>")
+        document.write("<br>")
+        //Task 3 banking system 3 functions under a class
+        document.write("Task 3 - Banking class with the three functions")
+        document.write("<br>")
+        document.write("<br>")
+        
+        function banking(){
+            this.balance=0;
+            this.openAccount = function(openbalance){
+                this.balance=openbalance;
+                document.write("Account opened and Your current balance is " + openbalance)
+            }
+            this.withdraw = function(withdrawAmt){
+                if(withdrawAmt>this.balance)
+                document.write("You dont have Enough Balance in you account")
+                else
+                {   
+                    this.balance = this.balance - withdrawAmt; 
+                    document.write("Amount Withdraw Successfull Your Cureent Balance is :" + this.balance);   }
+            }
+            this.deposit = function(DepositAmt){
+                this.balance=this.balance + DepositAmt;
+                document.write("You deposited the Amount is " + DepositAmt)
+                document.write("<br>")
+                document.write("<br>")
+                document.write("Now your current balance is " + this.balance)
+            }
+        }
+
+        var acc = new banking();
+        acc.openAccount(10000);
+        document.write("<br>")
+        document.write("<br>")
+        acc.withdraw(2000);
+        document.write("<br>")
+        document.write("<br>")
+        acc.deposit(20000);
+        document.write("<br>")
+        document.write("<br>")
+
+
+        // Task 4 Deleting A task from a task array at the given position
+        document.write("<br>")
+        document.write("<br>")
+        document.write("Task 4 - Deleting A task from a task array at the given position")
+        document.write("<br>")
+        document.write("<br>")
+        
+        function deletingTask(){
+            this.taskarray = ["Doing a Homework","Reading A book","Buy some fruits from the market"];
+            document.write(this.taskarray);
+            this.delete= function(i){
+                document.write("<br>")
+                document.write("<br>")
+                this.taskarray.splice(i,1);
+                document.write("After Deleteing ...");
+                document.write("<br>")
+                document.write("<br>")
+                document.write(this.taskarray);
+            }
+        }
+        
+        var task = new deletingTask();
+        task.delete(1);
+         
+
+        
+
+
+
+    </script>
+    
+</head>
+<body>
+
+</body>
+</html>
