@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Banking</title>
+    <link rel="stylesheet" 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script>
+            function Add(){
+                var Amount=document.getElementById("Amount").value;
+                if(Amount == ""){
+                    alert("please enter the Amount")
+                }
+                else{
+                 let Remainingbalance=document.getElementById("Remainingbalance")
+                Remainingbalance.value=Amount;
+             }
+            }
+            function Withdraw(){
+             var totalBalance=document.getElementById("Remainingbalance").value;
+             var Amount=document.getElementById("Amount").value;
+             var balanceAmt = totalBalance-Amount;
+             if(Amount == ""){
+                    alert("please enter the Amount")
+                }
+             else if(Amount > totalBalance){
+                 alert('Your Dont have enough balance');
+ 
+                }
+                else{
+                 document.getElementById(Remainingbalance).value=balanceAmt;
+                 document.getElementById("Amount").value="";
+                }
+ 
+            }
+            function Deposit(){
+             var totalBalance=document.getElementById("Remainingbalance").value;
+             var Amount=document.getElementById("Amount").value;
+             var balanceAmt = totalBalance+Amount;
+             if(Amount == ""){
+                    alert("please enter the Amount")
+                }
+                else{
+                 document.getElementById(Remainingbalance).value=balanceAmt;
+                 document.getElementById("Amount").value="";
+                }
+            }
+ 
+ 
+ 
+ 
+         </script>
+    </head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="Main.html">My App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="Main.html">Form </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="Bnking.html">Banking <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="City.html">City</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="text-center" style="margin-top: 50px;">
+            <img src="/bank.jpg" class="rounded" >
+          </div>
+        
+        <form style="position: absolute; top:50%; left: 50%; transform: translate(-50%,-50%);">
+            <div class="row align-items-center">
+            <div class="col mb-3">
+              <label for="exampleInputAmount" class="form-label">Enter Amount</label>
+              <input type="text" class="form-control" id="Amount">
+              
+            </div>
+            <div class="col mb-3" >
+                <label for="exampleInputAmount" class="form-label">Current Balance</label>
+                <input disabled type="text" class="form-control" id="Remainingbalance">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="button" class="btn btn-primary" onclick="Add()">Open Account</button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-primary" onclick="Withdraw()">Withdraw</button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-primary" onclick="Deposit()">Deposit</button>
+                </div>
+        </div>
+         </form>
+    
+</body>
+</html>
